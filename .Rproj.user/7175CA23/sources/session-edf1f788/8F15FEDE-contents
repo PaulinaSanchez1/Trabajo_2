@@ -134,7 +134,176 @@ proc_data$edad_rec <- set_label(x = proc_data$edad_rec,label = "Edad")
 
 frq(proc_data$edad_rec)
 
+#GUARDAR BBDD Filtrada
+
 proc_data <-as.data.frame(proc_data)
 stargazer(proc_data, type="text")
 
 save(proc_data,file = "C:\\Users\\pauli\\Documents\\GitHub\\Trabajo_2\\input\\data_proc/INJUV_Maternalismo2022.RData")
+
+
+
+#CREACIÓN DE TABLAS Y GRÁFICOS
+
+pacman::p_load(sjlabelled,
+               heaven,
+               dplyr, #Manipulacion de datos
+               stargazer, #Tablas
+               sjmisc, # Tablas
+               summarytools, # Tablas
+               kableExtra, #Tablas
+               sjPlot, #Tablas y gráficos
+               corrplot, # Correlaciones
+               sessioninfo, # Información de la sesión de trabajo
+               ggplot2) # Para la mayoría de los gráficos
+
+pacman::p_load(heaven)
+
+names(proc_data) # Muestra los nombres de las variables de la base de datos
+dim(proc_data) # Dimensiones
+
+stargazer(proc_data,type = "text")
+
+#me arroja error
+sjmisc::descr(proc_data)
+
+#Tabla descriptiva
+summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+
+view(dfSummary(proc_data, headings=FALSE))
+
+#Visualización de variables
+
+# Crear el gráfico usando ggplot2
+
+    #Ideas maternalistas
+graph1 <- proc_data %>% ggplot(aes(x = ideas_mater)) + 
+  geom_bar(fill = "pink")+
+  labs(title = "Ideas Maternalista",
+       x = "Ideas maternalistas",
+       y = "Frecuencia") +
+  theme_bw()
+
+graph1
+
+#guardar imagen:
+
+ggsave(graph1, file="files/img/graph1.png")
+
+
+    #Maternalismo en torno al cuidado
+graph1.1 <- proc_data %>% ggplot(aes(x = mater_cuidados)) + 
+  geom_bar(fill = "pink")+
+  labs(title = "Ideas Maternalista: cuidados",
+       x = "Ideas maternalistas en torno a los cuidados",
+       y = "Frecuencia") +
+  theme_bw()
+
+graph1.1
+
+#guardar imagen:
+
+ggsave(graph1.1, file="files/img/graph1.png")
+
+
+    #Maternalismo en torno a los hijos
+graph1.2 <- proc_data %>% ggplot(aes(x = mater_hijos)) + 
+  geom_bar(fill = "pink")+
+  labs(title = "Ideas Maternalista: hijos",
+       x = "Ideas maternalistas en torno a los hijos",
+       y = "Frecuencia") +
+  theme_bw()
+
+graph1.2
+
+#guardar imagen:
+
+ggsave(graph1.2, file="files/img/graph1.png")
+
+#Tablas de contingencia para variables categóricas
+sjt.xtab(proc_data$educ_alcanzada, proc_data$ideas_mater)
+
+sjt.xtab(proc_data$educ_alcanzada, proc_data$mater_cuidados)
+
+sjt.xtab(proc_data$educ_alcanzada, proc_data$mater_hijos)
+
+sjt.xtab(proc_data$educ_alcanzada, proc_data$ideas_mater,
+         show.col.prc=TRUE,
+         show.summary=FALSE,
+         encoding = "UTF-8"
+)
+
+sjt.xtab(proc_data$educ_alcanzada, proc_data$mater_cuidados,
+         show.col.prc=TRUE,
+         show.summary=FALSE,
+         encoding = "UTF-8"
+)
+
+sjt.xtab(proc_data$educ_alcanzada, proc_data$mater_hijos,
+         show.col.prc=TRUE,
+         show.summary=FALSE,
+         encoding = "UTF-8"
+)
+
+#Tablas de promedio
+
+    #Ideas maternalistas
+graph <- ggplot(proc_data, aes(x =educ_alcanzada, y = ideas_mater)) +
+  geom_boxplot() +
+  labs(x = "Educación", y = "Ideas Maternalistas") +
+  theme_minimal()
+
+graph
+
+    #maternalismo hijos
+graph <- ggplot(proc_data, aes(x =educ_alcanzada, y = mater_hijos)) +
+  geom_boxplot() +
+  labs(x = "Educación", y = "Ideas Maternalistas: hijos") +
+  theme_minimal()
+
+graph
+
+    #maternalismo cuidados
+graph <- ggplot(proc_data, aes(x =educ_alcanzada, y = mater_cuidados)) +
+  geom_boxplot() +
+  labs(x = "Educación", y = "Ideas Maternalistas: cuidados") +
+  theme_minimal()
+
+graph
+
+#Otro gráfico
+
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data,
+                                              mater_hijos,
+                                              mater_cuidados),
+                                title = "Ideas maternalistas") +
+  theme(legend.position="bottom")
+
+graph2
+
+datos <- proc_data %>% group_by(educ_alcanzada) %>% 
+  summarise(promedio = mean(mater_hijos))
+
+ggplot(datos, aes(x =educ_alcanzada, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Ideas Maternalistas: hijos") +
+  theme_minimal()+
+  ylim(0, 12)
+
+datos <- proc_data %>% group_by(educ_alcanzada) %>% 
+  summarise(promedio = mean(mater_cuidados))
+
+ggplot(datos, aes(x =educ_alcanzada, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Ideas Maternalistas: cuidados") +
+  theme_minimal()+
+  ylim(0, 12)
+
+datos <- proc_data %>% group_by(educ_alcanzada) %>% 
+  summarise(promedio = mean(ideas_mater))
+
+ggplot(datos, aes(x =educ_alcanzada, y = promedio)) +
+  geom_point() +
+  labs(x = "Educación", y = "Ideas Maternalistas") +
+  theme_minimal()+
+  ylim(0, 12)
