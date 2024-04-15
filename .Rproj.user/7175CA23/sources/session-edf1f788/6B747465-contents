@@ -30,15 +30,15 @@ A modo de hipótesis se plantea que, en el año referido, a medida en que se ava
 
 Con el fin de confirmar o desestimar la hipótesis propuesta, se trabajará con los datos extraídos de los resultados de la décima Encuesta Nacional de Juventudes del año 2022 impartida por el Instituto Nacional de Juventud (INJUV) del Ministerio de Desarrollo Social y Familia. A partir de aquí se considerará las siguientes variables:
 
--   Sexo
+-   **Sexo**
 
     -   Mujer
 
--   Edad
+-   **Edad**
 
     -   entre 26 y 29 años
 
--   Nivel educacional alcanzado
+-   **Nivel educacional alcanzado**
 
     -   Sin educación
 
@@ -52,16 +52,61 @@ Con el fin de confirmar o desestimar la hipótesis propuesta, se trabajará con 
 
     -   Postgrado
 
--   Afirmaciones maternalistas
+-   **Afirmaciones maternalistas**
 
-    -   Maternalismo cuidados
+    -   **Maternalismo cuidados**
 
         -   "La mujer tiene más capacidad que el hombre para desempeñar profesiones que implican el cuidado de otras personas"
 
-    -   Maternalismo hijos
+    -   **Maternalismo hijos**
 
         -   "Las mujeres que tienen hijos o hijas se sienten más realizadas que aquellas que no tienen hijos o hijas"
 
-Es por esto que se utilizarán los resultados de mujeres adultas de entre 26 y 29 años de edad, de esta manera se espera que a esta edad sea alcanzado el mayor nivel de educación posible. Las afirmaciones maternalistas están medidas con la Escala de Likert del 1 al 5, a modo que el 1 es "Muy en desacuerdo" y 5 "Muy de acuerdo".
+Para lograr tener los resultados esperados, se aplicó un filtro a la base de datos, dejando sólo a mujeres de entre 26 y 29 años, pues a esta edad se espera que se haya alcanzado el mayor nivel educacional posible. Las afirmaciones maternalistas están medidas con la Escala de Likert del 1 al 5, a modo que el 1 es "Muy en desacuerdo" y 5 "Muy de acuerdo".
 
 ## Visualización de resultados
+
+### Descriptivos
+
+-   **Tabla 1**
+
+A continuación, en la Tabla 1 se presenta la descripción de las variables a utilizar en esta investigación. En primer lugar se considera en la variable "Sexo" sólo a las mujeres y en la variable "Edad simple" sólo aquellas que tienen entre 26 y 29 años de edad, siendo un 39,8% mujeres de 29 años. Por tanto, los datos a considerar son en total 1.591 casos. Se recodificó la variable "Nivel educacional alcanzado" dejando sólo 6 categorías de respuesta, donde se puede observar en la tabla que un 54,7% de los casos alcanzó la Educación superior, el 40,5% la Educación media, el 3,1% la educación básica y el 1,8% el Postgrado. Luego, se pueden observar tres variables que hacen alusión a ideas maternalistas:
+
+-   Primero la variable "Maternalismo cuidados" refiere a la afirmación *"La mujer tiene más capacidad que el hombre para desempeñar profesiones que implican el cuidado de otras personas".* En la tabla, se puede observar que aquella afirmación tuvo un 54% de respuestas a favor (sumando las respuestas de "Muy de acuerdo" y "De acuerdo") y sólo un 26,6% de respuestas en contra (sumando las respuestas de "Muy en desacuerdo" y "En desacuerdo" ).
+
+-   Luego, la variable "Maternalismo hijos" refiere a la afirmación *"Las mujeres que tienen hijos o hijas se sienten más realizadas que aquellas que no tienen hijos o hijas"*. En la tabla, se puede observar que quella afirmación tuvo un 73,3% de respuestas en contra (sumando las respuestas de "Muy en desacuerdo" y "En desacuerdo" ) y un 13,2% (sumando las respuestas de "Muy de acuerdo" y "De acuerdo") de respuestas en favor.
+
+-   Finalmente, la variable "Ideas maternalistas" hace referencia a ambas variables anteriores juntas. Teniendo una escala del 1 al 10 donde 1 es "Menor grado de ideas maternalistas" y 10 es "Mayor grado de ideas maternalistas", se puede observar en la tabla que el 26% de los casos son ubicados en el número 6 de la escala. Podría decirse entonces, que la mayoría de las mujeres entre 26 y 29 años, se ubican en una media que tiende a tener ideas maternalistas pero no logran ser de tanto peso.
+
+    ![](files/descrptivo1.png)
+
+    ![](files/descritivo2.png)
+
+```{=html}
+<!-- -->
+```
+-   **Tabla 2**
+
+En la Tabla 2 se pueden observar las frecuencias en torno a la variable "Ideas Maternalistas" y el "Nivel educacional alcanzado". Es en base a esta tabla que se puede decir que, las mujeres entre 26 y 29 años que alcanzaron las educación básica y educación media en su mayoría, tienden a estar en un nivel intermedio respecto a las ideas maternalistas con las que están de acuerdo. Sin embargo, las que alcanzan la educación superior y postgrado tienen en su mayoría a estar en desacuerdo con las ideas maternalistas.
+
+![](files/descrip1.png){width="487"}
+
+### Gráficos
+
+-   **Gráfico 1**
+
+En el Gráfico 1 se puede observar que frente a la afirmación "Las mujeres que tienen hijos o hijas se sienten más realizadas que aquellas que no tienen hijos o hijas", las mujeres de entre 26 y 29 años de edad, en su mayoría, tienden a estar "Muy en desacuerdo" con la afirmación.
+
+![](files/img/grafico_hijos.png){width="488"}
+
+-   **Gráfico 2**
+
+En el Gráfico 2 se puede observar que frente a la afirmación "La mujer tiene más capacidad que el hombre para desempeñar profesiones que implican el cuidado de otras personas", las mujeres entre 26 y 29 años tienen a estar "Muy de acuerdo" y " De acuerdo". En comparación a lo observado en el Gráfico 1, las ideas maternalistas en torno al rol de la mujer como cuidadora pesan más en la cultura chilena que la idea maternalista de que los hijos hacen que las mujeres se sientan más realizadas.
+
+![](files/img/grafico_cuidados.png){width="486"}
+
+-   **Gráfico 3**
+
+Respecto al nivel de educación alcanzada y las ideas maternalistas de mujeres jóvenes, el Gráfico 3 señala que en promedio, las mujeres con bajos niveles de educación, tienden a estar de acuerdo con las ideas maternalistas impuestas socialmente. Sin embargo, cuando se observan las mujeres que lograron llegar a la educación superior y postgrado, en promedio ellas tienden a estar en desacuerdo con las ideas maternalistas en torno al rol de la mujer como cuidadora y de madre.
+
+![](files/promedio_ideas_mater.png){width="555"}
