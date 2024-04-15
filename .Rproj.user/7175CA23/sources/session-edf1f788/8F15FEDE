@@ -1,0 +1,27 @@
+{
+    "id": "8F15FEDE",
+    "path": "~/GitHub/Trabajo_2/processing/Preparacion.R",
+    "project_path": "processing/Preparacion.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1713202775763.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled2",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "140,0",
+        "scrollLine": "120"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1713202788,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1713204218730,
+    "read_only": false,
+    "read_only_alternatives": []
+}
